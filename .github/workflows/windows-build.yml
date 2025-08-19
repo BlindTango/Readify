@@ -1,0 +1,38 @@
+name: Build Readify (Windows)
+
+on:
+  push:
+    branches: [ main, feature/windows-executable ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup vcpkg
+      uses: microsoft/setup-vcpkg@v1
+      with:
+        vcpkg-args: 'install wxwidgets:x64-windows'
+    
+    - name: Configure CMake
+      run: |
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=%VCPKG_ROOT%\scripts\buildsystems\vcpkg.cmake
+    
+    - name: Build
+      run: cmake --build build --config Release
+    
+    - name: Collect artifact
+      run: |
+        mkdir artifact
+        copy build\Release\readify.exe artifact\readify.exe
+        xcopy /E /I assets artifact\assets
+        powershell Compress-Archive -Path artifact\* -DestinationPath readify-windows-x64.zip
+    
+    - uses: actions/upload-artifact@v4
+      with:
+        name: readify-windows-x64
+        path: readify-windows-x64.zip
