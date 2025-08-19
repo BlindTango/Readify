@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -Wl,--dependency-file=CMakeFiles/readify.dir/link.d CMakeFiles/readify.dir/main.cpp.o -o readify  -L/usr/lib/x86_64-linux-gnu -pthread -lwx_gtk3u_core-3.2 -lwx_baseu-3.2 -lwx_gtk3u_html-3.2

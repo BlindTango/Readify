@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify - User Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background-color: #e7f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid #007acc;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: #007acc;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .code {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Readify User Guide</h1>
+        <p>Everything you need to know about using Readify</p>
+    </div>
+    
+    <div class="content">
+        <div class="section">
+            <h2>Interface Overview</h2>
+            <p>Readify's interface consists of several key components:</p>
+            <ul>
+                <li><strong>Menu Bar:</strong> Contains File and Help menus for common operations</li>
+                <li><strong>Toolbar:</strong> Quick access to Open, Back, and Forward functions</li>
+                <li><strong>Navigation Tree:</strong> Shows available documents in the assets folder</li>
+                <li><strong>Content Area:</strong> Displays the selected HTML document</li>
+                <li><strong>Status Bar:</strong> Shows information about the currently loaded file</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Opening Documents</h2>
+            <p>There are several ways to open HTML documents in Readify:</p>
+            <ol>
+                <li>Use the <strong>File → Open</strong> menu option</li>
+                <li>Click the <strong>Open</strong> button in the toolbar</li>
+                <li>Use the keyboard shortcut <strong>Ctrl+O</strong></li>
+                <li>Select a file from the navigation tree (for assets folder contents)</li>
+            </ol>
+            
+            <div class="tip">
+                <strong>Tip:</strong> Readify automatically loads index.html from the assets folder when it starts up, if the file exists.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Navigation Features</h2>
+            <p>The navigation tree on the left side of the interface shows all HTML files in the assets folder. 
+            Simply click on any file name to load it in the content area.</p>
+            
+            <p>The Back and Forward buttons in the toolbar are present for future functionality but are 
+            currently disabled as specified in the design.</p>
+        </div>
+        
+        <div class="section">
+            <h2>System Requirements</h2>
+            <p>Readify is built with wxWidgets and has minimal system requirements:</p>
+            <ul>
+                <li>Windows 7 or later (for Windows builds)</li>
+                <li>Minimal disk space (under 10MB)</li>
+                <li>No additional dependencies required</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Building from Source</h2>
+            <p>If you want to build Readify from source, you'll need:</p>
+            <div class="code">
+                <p>Dependencies:</p>
+                <p>- CMake 3.16 or later</p>
+                <p>- wxWidgets library (core, base, html components)</p>
+                <p>- C++17 compatible compiler</p>
+            </div>
+            
+            <p>Build steps:</p>
+            <div class="code">
+                <p>cmake -S . -B build</p>
+                <p>cmake --build build --config Release</p>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <strong>Navigation:</strong>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </div>
+    
+    <footer style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 0.9em;">
+        <p>Readify User Guide | For more information, visit the project repository</p>
+    </footer>
+</body>
+</html>
